@@ -65,7 +65,7 @@ Features marked **[Planned]** are deferred to a later implementation.
 Then iterate:
 
 1. **Generate:** “Implement the README.” The agent records the needed design, builds it, and verifies the behavior.
-2. **Refine:** Try it. Edit the README and have the agent propagate the diff into design, implementation, and tests. Repeat until satisfied.
+2. **Refine:** Try it. Edit the README to clarify or change what you want, then ask the agent to update the implementation. Repeat until satisfied.
 3. **Accept and commit:** Review the result and verification, then commit the requirements, design, code, and tests together.
 4. **Continue in a fresh chat:** Start from a clean working copy and edit the README for the next iteration. Remove planned qualifications for features you want to implement, then repeat.
 

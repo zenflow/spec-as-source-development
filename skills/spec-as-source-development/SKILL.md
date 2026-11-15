@@ -55,7 +55,7 @@ Avoid restating requirements, narrating the codebase, or preserving task breakdo
 
 Make the implementation match the README and linked requirements. Implement all described behavior unless it is qualified as planned. Consider planned behavior in the design without implementing it.
 
-For revisions, the human edits requirements on a clean working copy. Propagate the diff into design, implementation, and tests, and verify against the updated requirements. Commit the related changes together after review.
+Start each iteration with the human editing requirements on a clean working copy. Use the diff to identify the initial change. During refinement, use the requirements previously read and the human's feedback to identify what changed, then reconcile the affected design, implementation, and tests with the updated requirements. If the earlier wording is unavailable or the change is unclear, use an available diff or ask a focused question. Verify the result and commit the related changes together after review.
 
 ### Marking planned behavior
 

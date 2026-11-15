@@ -82,7 +82,6 @@ The skill guides agent behavior; review and verification establish whether it fo
 These additions to the methodology are planned and not yet available:
 
 - Instructions and features for integrating the workflow into existing (brownfield) projects.
-- A worked regeneration exercise: build an example project, incorporate a deliberate human revision, then rebuild it in a fresh workspace from the retained requirements and design without the original implementation. Check the required behavior and any retained data contracts, and expose missing decisions for human review.
 
 ## Lineage and maintenance
 

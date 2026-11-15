@@ -20,7 +20,7 @@ The advantage is a specification small enough to understand, authoritative enoug
 
 ## How it works
 
-You define the desired behavior and qualities in the README or linked requirements. The agent exposes consequential gaps, derives the necessary technical sub-specifications in `ARCHITECTURE.md`, and implements the selected scope. Expected test outcomes come from requirements; design and code supply the mechanics. Discoveries become explicit decisions, then updates to the affected documents, code, and tests.
+You define the desired behavior and qualities in the README or linked requirements. The agent exposes consequential gaps, derives the necessary technical sub-specifications in `ARCHITECTURE.md`, and implements everything not qualified as planned. Expected test outcomes come from requirements; design and code supply the mechanics. Discoveries become explicit decisions, then updates to the affected documents, code, and tests.
 
 You [author the requirements](skills/spec-as-source-development/SKILL.md#capture-decisions-and-expose-gaps) and revise them deliberately. The agent can help explore possible edits; carefully review any wording it drafts before accepting it as your intent. Routine engineering remains autonomous. Consequential product choices come back to you. The resulting repository carries enough intent and design for another session to continue, revise, or rebuild the required behavior.
 
@@ -30,7 +30,9 @@ You [author the requirements](skills/spec-as-source-development/SKILL.md#capture
 - Add to `AGENTS.md` ([starter](examples/AGENTS.md)): `For development work in this project, read and follow the installed spec-as-source-development skill.`
 - Optional: [install Ponytail](https://github.com/DietrichGebert/ponytail/blob/main/INSTALL.md) to favor smaller implementations.
 
-Write a small target README describing the product and what to build first. This example uses feature tags as one way to show scope and status:
+Start from a clean working copy and write the README for the product you want. If it's too much to build well in one pass, mark the deferred parts as planned. This keeps the full vision visible while you implement and refine it in stages.
+
+For example:
 
 ```markdown
 # Pocket Tasks
@@ -41,13 +43,13 @@ Tasks are saved on your machine and persist between runs. No account or network 
 
 ## Features
 
-Features marked **[In progress]** are under development and may be incomplete. Features marked **[Planned]** are not available yet. Unmarked features are available in the accepted baseline.
+Features marked **[Planned]** are deferred to a later implementation.
 
 ### Capturing tasks
 
-- **[In progress]** Add a task with a non-empty title.
-- **[In progress]** List saved tasks in creation order, showing each task's ID and title.
-- **[In progress]** An empty list says there are no tasks.
+- Add a task with a non-empty title.
+- List saved tasks in creation order, showing each task's ID and title.
+- An empty list says there are no tasks.
 
 ### Finishing tasks
 
@@ -62,12 +64,12 @@ Features marked **[In progress]** are under development and may be incomplete. F
 
 Then iterate:
 
-1. **Generate:** “Implement the features tagged [In progress] in the README.” The agent records the needed design, builds it, and verifies the behavior.
-2. **Refine:** Try it. Edit the README and point the agent at the relevant diff to reconcile the implementation and checks. Changes reviewed and completed together need no extra status tags.
-3. **Accept and commit:** Review the result and verification, bring delivery status and wording up to date, and commit the requirements, design, code, and tests together.
-4. **Continue in a fresh chat:** Choose the next scope and identify it in your request or README, then repeat.
+1. **Generate:** “Implement the README.” The agent records the needed design, builds it, and verifies the behavior.
+2. **Refine:** Try it. Edit the README and have the agent propagate the diff into design, implementation, and tests. Repeat until satisfied.
+3. **Accept and commit:** Review the result and verification, then commit the requirements, design, code, and tests together.
+4. **Continue in a fresh chat:** Start from a clean working copy and edit the README for the next iteration. Remove planned qualifications for features you want to implement, then repeat.
 
-See the [scope and status guidance](skills/spec-as-source-development/SKILL.md#implement-the-selected-stage) for the general rule and optional conventions. Add usage instructions and project commands as they become real.
+See the [implementation rule and ways to mark planned behavior](skills/spec-as-source-development/SKILL.md#implement-the-readme). Add usage instructions and project commands as they become real.
 
 ### As you iterate
 

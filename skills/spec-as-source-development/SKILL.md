@@ -21,7 +21,7 @@ Use these document roles, respecting equivalent locations already designated by 
 
 | Source | Authority |
 | --- | --- |
-| `README.md` and explicitly linked requirements | Product purpose, observable behavior, desired qualities, constraints, and delivery status. Human intent governs what is wanted. |
+| `README.md` and explicitly linked requirements | Product purpose, observable behavior, desired qualities, and constraints. Human intent governs what is wanted. |
 | `ARCHITECTURE.md` | Consequential technical choices, interfaces, data models, implementation sub-specifications, and useful rationale. Design governs how requirements are realized and remains subordinate to them. |
 | `AGENTS.md` | How to work in the project: this convention, document locations, engineering practices, and development/check commands. |
 
@@ -51,21 +51,19 @@ Make routine technical choices autonomously. Seek a human decision when a choice
 
 Avoid restating requirements, narrating the codebase, or preserving task breakdowns as permanent specification. Generated design must not silently add product expectations.
 
-## Implement the selected stage
+## Implement the README
 
-Implement the scope selected by the human. Keep it distinguishable from accepted future work and delivered behavior. Future plans may inform necessary design but do not authorize additional features or speculative infrastructure. Resolve consequential ambiguity with the human.
+Make the implementation match the README and linked requirements. Implement all described behavior unless it is qualified as planned. Consider planned behavior in the design without implementing it.
 
-Delivery claims follow verification. Pending requirement edits describe a target, not an availability claim. If current and pending replacement details coexist, make their relationship clear. After verification, reconcile status and remove superseded wording so the specification remains coherent.
+For revisions, the human edits requirements on a clean working copy. Propagate the diff into design, implementation, and tests, and verify against the updated requirements. Commit the related changes together after review.
 
-### Optional conventions
+### Marking planned behavior
 
-Follow the project's chosen conventions; no particular notation is required:
+For example:
 
-- A user-designated diff can define a change reviewed and committed with its implementation, without tags.
-- A status heading, such as `Planned features`, can cover a section.
-- A tag can cover a feature or a clearly bounded detail, such as `[In progress: and completion status]`.
-
-Where used, Planned means accepted future work and In progress means selected or partial work. A convention that treats unmarked text as available applies to the accepted baseline, not pending edits.
+- A `Planned features` section for deferred features.
+- A `[Planned]` prefix on a feature bullet.
+- An inline note such as `[Planned: allow filtering to unfinished tasks]`, scoped to the enclosed detail.
 
 ## Verify against intent
 
@@ -77,7 +75,7 @@ For a covered defect, demonstrate the failure and correction where practical. Fo
 
 ## Revise freely and leave durable context
 
-When the human changes a decision, revise its source in place and reconcile affected design, implementation, tests, and delivery status. Remove obsolete statements; use version control for history. Earlier approval, generated plans, and existing tests do not overrule an explicit revision.
+When the human changes a decision, revise its source in place and reconcile affected design, implementation, and tests. Remove obsolete statements; use version control for history. Earlier approval, generated plans, and existing tests do not overrule an explicit revision.
 
 Distinguish withdrawal of a feature from removal of redundant wording; clarify consequential ambiguity rather than guessing. Do not rewrite requirements to excuse accidental implementation drift.
 

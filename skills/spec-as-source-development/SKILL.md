@@ -3,8 +3,8 @@ name: spec-as-source-development
 description: >-
   Keep human intent authoritative in a living README and linked requirements,
   derive subordinate technical design, and implement and verify software against
-  those sources. Use when the user requests Spec-as-Source Development,
-  README-driven development, or a project explicitly adopts this workflow.
+  those sources. Use when the user requests Spec-as-Source Development (SASD),
+  or a project explicitly adopts this workflow.
 ---
 
 # Spec-as-Source Development

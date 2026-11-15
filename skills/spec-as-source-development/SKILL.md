@@ -9,9 +9,9 @@ description: >-
 
 # Spec-as-Source Development
 
-**Preserve human intent as source. Verify implementation against it.**
+**A lightweight SDD framework for keeping human intent authoritative while making implementation regenerable.**
 
-The human authors the requirements that define what the software should do. The README and linked requirements preserve that intent; the agent derives technical sub-specifications, implementation, and verification from it. Discoveries feed back into explicit human decisions and revisions. Keep the specification concise, current, and sufficient to rebuild the required behavior without reverse-engineering the old implementation.
+Deliberate human decisions define what the software should do. The README and linked requirements preserve that intent; the agent derives technical sub-specifications, implementation, and verification from it. Discoveries feed back into explicit human decisions and revisions. Keep the specification concise, current, and sufficient to rebuild the required behavior without reverse-engineering the old implementation.
 
 ## Establish the sources
 
@@ -53,19 +53,19 @@ Avoid restating requirements, narrating the codebase, or preserving task breakdo
 
 ## Implement the selected stage
 
-The README may describe a target product before it exists. Organize it by product topic, with leading status tags on individual features instead of milestone headings. Distinguish tentative proposals from accepted plans, and state this delivery convention:
+The README may describe a target product before it exists. Organize it by product topic, with leading status tags on individual features. Distinguish tentative proposals from accepted plans, and state this delivery convention:
 
 - **[Planned]:** accepted future behavior outside the current implementation stage; not available yet.
 - **[In progress]:** selected or partially implemented behavior; may be incomplete. Note what is available when needed.
 - **No tag:** implemented and verified behavior, available now.
 
-When work begins, change the selected features' tags from [Planned] to [In progress]. Remove each tag only after that feature is implemented and verified; do not replace it with an Available tag. Keep the feature in place so completion requires only a tag change, with no milestone structure left behind. Split features that can become available independently.
+When work begins, change the selected features' tags from [Planned] to [In progress]. Remove each tag only after that feature is implemented and verified. Keep the feature in place so completion requires only a tag change.
 
 Implement the requested stage. Planned behavior may inform necessary design but does not authorize implementing future features or speculative infrastructure. Resolve materially unclear scope with the human.
 
 ## Verify against intent
 
-Derive expected outcomes from the requirements, independently of the implementation's answers. This concerns the source of expected outcomes; implementation and verification can be developed together by the same agent. For each affected behavior, identify what would demonstrate conformance. Use meaningful tests, inspection, or direct evaluation appropriate to the requirement, and check applicable architectural constraints too.
+Derive expected outcomes from the requirements, independently of the implementation's answers. For each affected behavior, identify what would demonstrate conformance. Use meaningful tests, inspection, or direct evaluation appropriate to the requirement, and check applicable architectural constraints too.
 
 Code can inform test mechanics, coverage, and internal correctness checks. It cannot establish intended product behavior. Do not bless observed outputs as expected results without grounding them in the specification. Tests can cover implied cases and internal invariants without turning every assertion into another requirement.
 

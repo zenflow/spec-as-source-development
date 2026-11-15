@@ -75,6 +75,13 @@ A new feature, a changed preference, or a reversed decision follows the same loo
 
 The skill guides agent behavior; review and verification establish whether it followed through. Regenerable means the intended behavior and consequential design survive replacement of the implementation, not that every change requires starting over.
 
+## Planned features
+
+These additions to the methodology are planned and not yet available:
+
+- **[Planned]** Isolated development of implementation and tests, so both are derived from the specification independently.
+- **[Planned]** Instructions and features for integrating the workflow into existing (brownfield) projects.
+
 ## Lineage and maintenance
 
 The name draws on Birgitta Böckeler's distinction between [spec-first, spec-anchored, and spec-as-source development](https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html). The workflow grew from [README-driven development](https://tom.preston-werner.com/2010/08/23/readme-driven-development.html), its former name here.

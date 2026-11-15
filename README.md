@@ -115,6 +115,6 @@ The skill guides agent behavior; review and verification establish whether it fo
 
 The name draws on Birgitta Böckeler's distinction between [spec-first, spec-anchored, and spec-as-source development](https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html). The workflow grew from [README-driven development](https://tom.preston-werner.com/2010/08/23/readme-driven-development.html), its former name here.
 
-For changes to this skill, keep the workflow in SKILL.md and the onboarding here. Package decisions and validation guidance are in [ARCHITECTURE.md](ARCHITECTURE.md) and the repository's [AGENTS.md](AGENTS.md).
+For changes to this skill, keep the workflow in SKILL.md and the onboarding here. Package decisions are in [ARCHITECTURE.md](ARCHITECTURE.md); repository working instructions are in [AGENTS.md](AGENTS.md).
 
 [MIT license](LICENSE).

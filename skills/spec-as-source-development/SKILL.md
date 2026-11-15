@@ -13,6 +13,8 @@ description: >-
 
 Deliberate human decisions define what the software should do. The README and linked requirements preserve that intent; the agent derives technical sub-specifications, implementation, and verification from it. Discoveries feed back into explicit human decisions and revisions. Keep the specification concise, current, and sufficient to rebuild the required behavior without reverse-engineering the old implementation.
 
+This skill governs the authority and evolution of requirements and their relationship to design, implementation, and verification. Specific engineering practices, such as test-driven development or isolated test development, are left to project instructions and optional companion skills.
+
 ## Establish the sources
 
 Read the relevant requirements, technical design, and working instructions before changing behavior. Inspect the affected implementation to understand the work, without treating its current behavior as proof of what is wanted.

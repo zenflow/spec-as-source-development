@@ -26,11 +26,10 @@ You [author the requirements](skills/spec-as-source-development/SKILL.md#capture
 
 ## Bootstrap a project
 
-- Install from your application project with the [Skills CLI](https://github.com/vercel-labs/skills/blob/main/docs/commands.md): `npx skills add zenflow/spec-as-source-development --skill spec-as-source-development`.
-- Add to `AGENTS.md` ([starter](examples/AGENTS.md)): `For development work in this project, read and follow the installed spec-as-source-development skill.`
-- Optional: [install Ponytail](https://github.com/DietrichGebert/ponytail/blob/main/INSTALL.md) to favor smaller implementations.
-
-Start from a clean working copy and write the README for the product you want. If it's too much to build well in one pass, mark the deferred parts as planned. This keeps the full vision visible while you implement and refine it in stages.
+- Install this skill from your application project with the [Skills CLI](https://github.com/vercel-labs/skills/blob/main/docs/commands.md): `npx skills add zenflow/spec-as-source-development --skill spec-as-source-development`.
+- Add to `AGENTS.md`: `For development work in this project, read and follow the installed spec-as-source-development skill.` Or copy the [starter](examples/AGENTS.md).
+- Optionally install companion skills, such as [Ponytail](https://github.com/DietrichGebert/ponytail/blob/main/INSTALL.md) for smaller implementations: `npx skills add DietrichGebert/ponytail --skill ponytail`.
+- Start from a clean working copy and write the README for the product you want. If it's too much to build well in one pass, mark the deferred parts as planned. This keeps the full vision visible while you implement and refine it in stages.
 
 For example:
 

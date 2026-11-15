@@ -9,9 +9,9 @@ description: >-
 
 # Spec-as-Source Development
 
-**Preserve human intent as source. Derive implementation and verification independently.**
+**Preserve human intent as source. Verify implementation against it.**
 
-Deliberate human decisions define what the software should do. The README and linked requirements preserve that intent; the agent derives technical sub-specifications, implementation, and verification from it. Discoveries feed back into explicit decisions and revisions. Keep the specification concise, current, and sufficient to rebuild the required behavior without reverse-engineering the old implementation.
+The human authors the requirements that define what the software should do. The README and linked requirements preserve that intent; the agent derives technical sub-specifications, implementation, and verification from it. Discoveries feed back into explicit human decisions and revisions. Keep the specification concise, current, and sufficient to rebuild the required behavior without reverse-engineering the old implementation.
 
 ## Establish the sources
 
@@ -29,41 +29,43 @@ Prefer an existing `DESIGN.md` over creating a competing architecture document. 
 
 ## Capture decisions and expose gaps
 
-Before implementing a new or changed expectation, make the smallest faithful update to its authoritative source. Preserve the user's meaning and wording where practical. Humans may edit directly or ask the agent to do it; an explicit request already authorizes its corresponding documentation change. Do not add another approval ceremony.
+The human authors and deliberately revises the requirements. The agent may help explore possible edits or draft wording, but agent-written requirements remain proposals until the human has carefully reviewed them and accepted them as expressing conscious, intentional decisions.
+
+Before implementing a new or changed expectation, ensure its authoritative source records that human decision. Preserve the human's meaning and wording. Apply exact human-authored or already accepted edits directly; do not require repeated approval.
 
 Capture qualities and constraints as well as features. “Make it pretty” establishes a visual expectation; it does not authorize an invented design system or arbitrary metric. Use examples or a focused question when the distinction affects the result.
 
 Actively expose consequential omissions, ambiguities, contradictions, and conflicts between sources and implementation. Explain their effect, propose useful options, and obtain human judgment where needed. Keep proposals and unresolved questions visibly separate from accepted requirements. Continue independent work while a consequential decision is unresolved.
 
-Use engineering judgment for routine details. An inferred requirement becomes authoritative only through a human decision or explicit delegation of that class of decision. Necessary engineering work can follow from requirements without becoming additional product scope.
+Use engineering judgment for routine implementation details within accepted requirements. Necessary engineering work can follow from requirements without becoming additional product scope.
 
 If existing requirements already state or clearly imply the correct behavior, fix the defect and add appropriate regression coverage without inventing a new requirement. If a defect reveals a missing expectation, resolve and capture it. Apply the same distinction to technical commitments in the design.
 
-Keep durable expectations and consequential technical decisions out of chat-only history, temporary plans, and test-only assertions. When adopting an existing project, distinguish documented intent from observed behavior and proposals before promoting anything into the specification.
+Keep durable expectations and consequential technical decisions out of chat-only history, temporary plans, and test-only assertions.
 
 ## Derive the necessary design
 
 Develop technical sub-specifications only to the depth needed for the selected work. Record consequential boundaries, interfaces, dependencies, algorithms, and rationale when they will guide implementation or future changes. Connect them to the requirements they serve. Leave incidental details to the code.
 
-Make routine technical choices autonomously. Seek a human decision when a choice would change product intent or introduce a consequential product tradeoff not already decided or delegated. Once a design decision is documented, follow it or deliberately revise it before implementing a conflicting approach.
+Make routine technical choices autonomously. Seek a human decision when a choice would change product intent or introduce a consequential product tradeoff not already decided. Once a design decision is documented, follow it or deliberately revise it before implementing a conflicting approach.
 
 Avoid restating requirements, narrating the codebase, or preserving task breakdowns as permanent specification. Generated design must not silently add product expectations.
 
 ## Implement the selected stage
 
-The README may describe a target product before it exists. Distinguish tentative ideas from accepted plans, and intended behavior from delivered behavior:
+The README may describe a target product before it exists. Organize it by product topic, with leading status tags on individual features instead of milestone headings. Distinguish tentative proposals from accepted plans, and state this delivery convention:
 
-- **Planned:** accepted future behavior outside the current implementation stage.
-- **In progress:** selected or partially implemented behavior; note what is available when needed.
-- **Available:** implemented and verified behavior. An unmarked feature may mean available if the document makes that convention clear.
+- **[Planned]:** accepted future behavior outside the current implementation stage; not available yet.
+- **[In progress]:** selected or partially implemented behavior; may be incomplete. Note what is available when needed.
+- **No tag:** implemented and verified behavior, available now.
 
-When work begins, deliberately move the selected scope from Planned to In progress. Mark it Available, or remove its status marker under the stated convention, only after verification. A milestone heading can supply the status for its features.
+When work begins, change the selected features' tags from [Planned] to [In progress]. Remove each tag only after that feature is implemented and verified; do not replace it with an Available tag. Keep the feature in place so completion requires only a tag change, with no milestone structure left behind. Split features that can become available independently.
 
 Implement the requested stage. Planned behavior may inform necessary design but does not authorize implementing future features or speculative infrastructure. Resolve materially unclear scope with the human.
 
 ## Verify against intent
 
-Derive expected outcomes from the requirements, independently of the implementation's answers. For each affected behavior, identify what would demonstrate conformance. Use meaningful tests, inspection, or direct evaluation appropriate to the requirement, and check applicable architectural constraints too.
+Derive expected outcomes from the requirements, independently of the implementation's answers. This concerns the source of expected outcomes; implementation and verification can be developed together by the same agent. For each affected behavior, identify what would demonstrate conformance. Use meaningful tests, inspection, or direct evaluation appropriate to the requirement, and check applicable architectural constraints too.
 
 Code can inform test mechanics, coverage, and internal correctness checks. It cannot establish intended product behavior. Do not bless observed outputs as expected results without grounding them in the specification. Tests can cover implied cases and internal invariants without turning every assertion into another requirement.
 

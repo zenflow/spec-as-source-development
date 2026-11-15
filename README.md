@@ -2,8 +2,6 @@
 
 **A lightweight SDD framework for keeping human intent authoritative while making implementation regenerable.**
 
-> Preserve human intent as source. Derive implementation and verification independently.
-
 As AI reduces implementation effort, specifying intent and validating results become increasingly important. Spec-driven development gives that work a durable foundation: an explicit description of what the software should do, against which any implementation can be judged.
 
 Spec-as-Source Development is describing and continuously refining software expectations at their source in the README and linked requirements, then letting those decisions propagate into design, implementation, and tests.
@@ -24,90 +22,56 @@ The advantage is a specification small enough to understand, authoritative enoug
 
 You define the desired behavior and qualities in the README or linked requirements. The agent exposes consequential gaps, derives the necessary technical sub-specifications in `ARCHITECTURE.md`, and implements the selected scope. Expected test outcomes come from requirements; design and code supply the mechanics. Discoveries become explicit decisions, then updates to the affected documents, code, and tests.
 
-The [source roles](skills/spec-as-source-development/SKILL.md#establish-the-sources), [decision rules](skills/spec-as-source-development/SKILL.md#capture-decisions-and-expose-gaps), and [verification discipline](skills/spec-as-source-development/SKILL.md#verify-against-intent) live in the skill. `AGENTS.md` adopts the workflow and holds project working instructions. Existing document names can stay.
-
-You can edit the requirements yourself or describe a change and let the agent capture it faithfully. Routine engineering remains autonomous. Consequential product choices come back to you. The resulting repository carries enough intent and design for another session to continue, revise, or rebuild the required behavior.
-
-## Install and adopt
-
-This repository contains a self-contained [Agent Skills](https://agentskills.io/specification) package in [`skills/spec-as-source-development/`](skills/spec-as-source-development/).
-
-With this repository checked out locally, run the following from the application project where you want to use it:
-
-```sh
-npx skills add /path/to/spec-as-source-development --skill spec-as-source-development
-```
-
-Replace the path with your checkout. The [Skills CLI](https://github.com/vercel-labs/skills/blob/main/docs/commands.md) supports local sources and agent selection; add `--global` for installation across your projects. Alternatively, copy the complete skill directory into your agent's supported skills location.
-
-Ask your agent to use `spec-as-source-development`. To make it the project default, merge the [starter AGENTS.md](examples/AGENTS.md) into your existing instructions. Its adoption line is:
-
-```markdown
-For development work in this project, read and follow the installed
-`spec-as-source-development` skill.
-```
-
-If your agent has no skill loader, copy `SKILL.md` into the project as `spec-as-source-development.md`, retain its license notice, and replace that line with:
-
-```markdown
-For development work in this project, read and follow
-[Spec-as-Source Development](spec-as-source-development.md).
-```
-
-Use one installation approach per project so there is one copy to update.
-
-### Optional companions
-
-[Ponytail](https://github.com/DietrichGebert/ponytail) is a useful companion for favoring existing code, standard facilities, and smaller implementations. Follow its [installation guide](https://github.com/DietrichGebert/ponytail/blob/main/INSTALL.md) for your agent, and merge any working instructions into your existing `AGENTS.md`.
-
-Add stack-specific testing or browser skills when they help demonstrate the behavior you require. Companion skills support this workflow; their suggestions do not become product requirements automatically.
+You [author the requirements](skills/spec-as-source-development/SKILL.md#capture-decisions-and-expose-gaps) and revise them deliberately. The agent can help explore possible edits; carefully review any wording it drafts before accepting it as your intent. Routine engineering remains autonomous. Consequential product choices come back to you. The resulting repository carries enough intent and design for another session to continue, revise, or rebuild the required behavior.
 
 ## Bootstrap a project
 
-Write a small target README. Put the first milestone **In progress** and the rest **Planned**. The status on each heading applies to all its features:
+- Install from your application project with the [Skills CLI](https://github.com/vercel-labs/skills/blob/main/docs/commands.md): `npx skills add zenflow/spec-as-source-development --skill spec-as-source-development`.
+- Add to `AGENTS.md` ([starter](examples/AGENTS.md)): `For development work in this project, read and follow the installed spec-as-source-development skill.`
+- Optional: [install Ponytail](https://github.com/DietrichGebert/ponytail/blob/main/INSTALL.md) to favor smaller implementations.
+
+Write a small target README organized around the product. Tag the features you want to build first **[In progress]** and accepted future features **[Planned]**. Completed features stay in place and lose their tags:
 
 ```markdown
 # Pocket Tasks
 
 A local command-line task list for one person.
 
-## Expectations
+Tasks are saved on your machine and persist between runs. No account or network is needed, and output is kept concise and readable in a terminal.
 
-Tasks persist between runs on this machine. No account or network is needed.
-Output should be concise and readable in a terminal.
+## Features
 
-Milestone headings show delivery status. Planned features are not available.
+Features marked **[In progress]** are under development and may be incomplete. Features marked **[Planned]** are not available yet. Unmarked features are available now.
 
-## Milestone 1: Capture tasks [In progress]
+### Capturing tasks
 
-- Add a task with a non-empty title.
-- List saved tasks in creation order, showing each task's ID and title.
-- An empty list says there are no tasks.
+- **[In progress]** Add a task with a non-empty title.
+- **[In progress]** List saved tasks in creation order, showing each task's ID and title.
+- **[In progress]** An empty list says there are no tasks.
 
-## Milestone 2: Finish tasks [Planned]
+### Finishing tasks
 
-- Mark a task complete by ID.
-- Show completion status in the task list; allow filtering to unfinished tasks.
+- **[Planned]** Mark a task complete by ID.
+- **[Planned]** Show completion status in the task list.
+- **[Planned]** Filter the task list to unfinished tasks.
 
-## Milestone 3: Export [Planned]
+### Exporting
 
-- Export all tasks to JSON with their IDs, titles, and completion status.
+- **[Planned]** Export all tasks to JSON, including IDs, titles, and completion status.
 ```
 
 Then iterate:
 
-1. **Generate:** “Use Spec-as-Source Development. Implement milestone 1 from the README.” The agent records the needed design, builds it, and verifies the behavior.
-2. **Refine:** Try it. Edit the README or describe the details you want changed. Let the agent reconcile the implementation and checks.
-3. **Accept and commit:** Review the result and verification, mark the completed milestone Available, and commit the requirements, design, code, and tests together.
-4. **Continue in a fresh chat:** “Move milestone 2 from Planned to In progress and implement it.” Refine, verify, accept, and commit again.
+1. **Generate:** “Implement the features tagged [In progress] in the README.” The agent records the needed design, builds it, and verifies the behavior.
+2. **Refine:** Try it. Edit the README with the details you want changed. Let the agent reconcile the implementation and checks.
+3. **Accept and commit:** Review the result and verification, remove the [In progress] tags from completed features, and commit the requirements, design, code, and tests together.
+4. **Continue in a fresh chat:** Choose the next features to build, change their [Planned] tags to [In progress], open a fresh chat, and return to step 1.
 
-Promotion selects the work; verification establishes availability. See [stage semantics](skills/spec-as-source-development/SKILL.md#implement-the-selected-stage). Add usage instructions and project commands as they become real.
+Tags select the work; verification establishes availability. See [stage semantics](skills/spec-as-source-development/SKILL.md#implement-the-selected-stage). Add usage instructions and project commands as they become real.
 
-## Work with it day to day
+### As you iterate
 
 A new feature, a changed preference, or a reversed decision follows the same loop. A defect already covered by the requirements needs a fix and appropriate regression coverage; it does not need another specification. If you discover an expectation that was never recorded, capture it.
-
-For an existing project, start with its current documents and one concrete change. Have the agent identify the relevant gaps without generating a retrospective specification of every line of code.
 
 The skill guides agent behavior; review and verification establish whether it followed through. Regenerable means the intended behavior and consequential design survive replacement of the implementation, not that every change requires starting over.
 

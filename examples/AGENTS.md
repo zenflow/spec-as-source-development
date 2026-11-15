@@ -2,8 +2,7 @@
 
 ## Development workflow
 
-For development work in this project, read and follow the installed
-`spec-as-source-development` skill.
+For development work in this project, read and follow the installed spec-as-source-development skill.
 
 ## Working in this project
 

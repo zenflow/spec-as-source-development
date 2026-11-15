@@ -81,6 +81,7 @@ These additions to the methodology are planned and not yet available:
 
 - **[Planned]** Isolated development of implementation and tests, so both are derived from the specification independently.
 - **[Planned]** Instructions and features for integrating the workflow into existing (brownfield) projects.
+- **[Planned]** A worked regeneration exercise: build an example project, incorporate a deliberate human revision, then rebuild it in a fresh workspace from the retained requirements and design without the original implementation. Check the required behavior and any retained data contracts, and expose missing decisions for human review.
 
 ## Lineage and maintenance
 

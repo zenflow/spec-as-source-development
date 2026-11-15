@@ -37,29 +37,20 @@ For example:
 ```markdown
 # Pocket Tasks
 
-A local command-line task list for one person.
+A small web app for keeping track of everyday tasks.
 
-Tasks are saved on your machine and persist between runs. No account or network is needed, and output is kept concise and readable in a terminal.
+Built with vanilla JavaScript and browser `localStorage`, so your list is saved between visits in the same browser. No account or backend required.
 
 ## Features
 
-Features marked **[Planned]** are deferred to a later implementation.
+- Add tasks and check them off as you go.
+- Edit or delete tasks when plans change.
+- Switch between all tasks and those still to do.
 
-### Capturing tasks
+## Planned features
 
-- Add a task with a non-empty title.
-- List saved tasks in creation order, showing each task's ID and title.
-- An empty list says there are no tasks.
-
-### Finishing tasks
-
-- **[Planned]** Mark a task complete by ID.
-- **[Planned]** Show completion status in the task list.
-- **[Planned]** Filter the task list to unfinished tasks.
-
-### Exporting
-
-- **[Planned]** Export all tasks to JSON, including IDs, titles, and completion status.
+- Organize tasks with tags.
+- Export your list as a JSON backup.
 ```
 
 Then iterate:

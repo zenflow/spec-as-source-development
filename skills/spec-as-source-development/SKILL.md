@@ -53,15 +53,19 @@ Avoid restating requirements, narrating the codebase, or preserving task breakdo
 
 ## Implement the selected stage
 
-The README may describe a target product before it exists. Organize it by product topic, with leading status tags on individual features. Distinguish tentative proposals from accepted plans, and state this delivery convention:
+Implement the scope selected by the human. Keep it distinguishable from accepted future work and delivered behavior. Future plans may inform necessary design but do not authorize additional features or speculative infrastructure. Resolve consequential ambiguity with the human.
 
-- **[Planned]:** accepted future behavior outside the current implementation stage; not available yet.
-- **[In progress]:** selected or partially implemented behavior; may be incomplete. Note what is available when needed.
-- **No tag:** implemented and verified behavior, available now.
+Delivery claims follow verification. Pending requirement edits describe a target, not an availability claim. If current and pending replacement details coexist, make their relationship clear. After verification, reconcile status and remove superseded wording so the specification remains coherent.
 
-When work begins, change the selected features' tags from [Planned] to [In progress]. Remove each tag only after that feature is implemented and verified. Keep the feature in place so completion requires only a tag change.
+### Optional conventions
 
-Implement the requested stage. Planned behavior may inform necessary design but does not authorize implementing future features or speculative infrastructure. Resolve materially unclear scope with the human.
+Follow the project's chosen conventions; no particular notation is required:
+
+- A user-designated diff can define a change reviewed and committed with its implementation, without tags.
+- A status heading, such as `Planned features`, can cover a section.
+- A tag can cover a feature or a clearly bounded detail, such as `[In progress: and completion status]`.
+
+Where used, Planned means accepted future work and In progress means selected or partial work. A convention that treats unmarked text as available applies to the accepted baseline, not pending edits.
 
 ## Verify against intent
 

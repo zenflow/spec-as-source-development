@@ -30,7 +30,7 @@ You [author the requirements](skills/spec-as-source-development/SKILL.md#capture
 - Add to `AGENTS.md` ([starter](examples/AGENTS.md)): `For development work in this project, read and follow the installed spec-as-source-development skill.`
 - Optional: [install Ponytail](https://github.com/DietrichGebert/ponytail/blob/main/INSTALL.md) to favor smaller implementations.
 
-Write a small target README organized around the product. Tag the features you want to build first **[In progress]** and accepted future features **[Planned]**. Completed features stay in place and lose their tags:
+Write a small target README describing the product and what to build first. This example uses feature tags as one way to show scope and status:
 
 ```markdown
 # Pocket Tasks
@@ -41,7 +41,7 @@ Tasks are saved on your machine and persist between runs. No account or network 
 
 ## Features
 
-Features marked **[In progress]** are under development and may be incomplete. Features marked **[Planned]** are not available yet. Unmarked features are available now.
+Features marked **[In progress]** are under development and may be incomplete. Features marked **[Planned]** are not available yet. Unmarked features are available in the accepted baseline.
 
 ### Capturing tasks
 
@@ -63,11 +63,11 @@ Features marked **[In progress]** are under development and may be incomplete. F
 Then iterate:
 
 1. **Generate:** “Implement the features tagged [In progress] in the README.” The agent records the needed design, builds it, and verifies the behavior.
-2. **Refine:** Try it. Edit the README with the details you want changed. Let the agent reconcile the implementation and checks.
-3. **Accept and commit:** Review the result and verification, remove the [In progress] tags from completed features, and commit the requirements, design, code, and tests together.
-4. **Continue in a fresh chat:** Choose the next features to build, change their [Planned] tags to [In progress], open a fresh chat, and return to step 1.
+2. **Refine:** Try it. Edit the README and point the agent at the relevant diff to reconcile the implementation and checks. Changes reviewed and completed together need no extra status tags.
+3. **Accept and commit:** Review the result and verification, bring delivery status and wording up to date, and commit the requirements, design, code, and tests together.
+4. **Continue in a fresh chat:** Choose the next scope and identify it in your request or README, then repeat.
 
-Tags select the work; verification establishes availability. See [stage semantics](skills/spec-as-source-development/SKILL.md#implement-the-selected-stage). Add usage instructions and project commands as they become real.
+See the [scope and status guidance](skills/spec-as-source-development/SKILL.md#implement-the-selected-stage) for the general rule and optional conventions. Add usage instructions and project commands as they become real.
 
 ### As you iterate
 
@@ -79,9 +79,9 @@ The skill guides agent behavior; review and verification establish whether it fo
 
 These additions to the methodology are planned and not yet available:
 
-- **[Planned]** Isolated development of implementation and tests, so both are derived from the specification independently.
-- **[Planned]** Instructions and features for integrating the workflow into existing (brownfield) projects.
-- **[Planned]** A worked regeneration exercise: build an example project, incorporate a deliberate human revision, then rebuild it in a fresh workspace from the retained requirements and design without the original implementation. Check the required behavior and any retained data contracts, and expose missing decisions for human review.
+- Isolated development of implementation and tests, so both are derived from the specification independently.
+- Instructions and features for integrating the workflow into existing (brownfield) projects.
+- A worked regeneration exercise: build an example project, incorporate a deliberate human revision, then rebuild it in a fresh workspace from the retained requirements and design without the original implementation. Check the required behavior and any retained data contracts, and expose missing decisions for human review.
 
 ## Lineage and maintenance
 

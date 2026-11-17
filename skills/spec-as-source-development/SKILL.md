@@ -59,7 +59,9 @@ Avoid restating requirements, narrating the codebase, or preserving task breakdo
 
 Make the implementation match the README and linked requirements. Implement all described behavior unless it is qualified as planned. Consider planned behavior in the design without implementing it.
 
-Start each iteration with the human editing requirements on a clean working copy. Use the diff to identify the initial change. During refinement, use the requirements previously read and the human's feedback to identify what changed, then reconcile the affected design, implementation, and tests with the updated requirements. If the earlier wording is unavailable or the change is unclear, use an available diff or ask a focused question. Verify the result and commit the related changes together after review.
+Treat the last commit as the reconciled baseline: committed requirements, design, implementation, and tests are expected to agree. At the start of an iteration, identify the requested change from uncommitted edits to the requirements sources, including new linked files. During refinement, identify further changes from the requirements previously read and the human's feedback; when the earlier wording is unavailable, compare against the baseline. If the requested change is unclear, such as when requirement edits were committed separately or unrelated changes are present, ask a focused question rather than guessing. Never discard changes you did not make.
+
+Reconcile the affected design, implementation, and tests with the updated requirements, and verify the result. Do not commit until the human accepts it; then commit the requirements, design, code, and tests together, restoring a reconciled baseline.
 
 ### Marking planned behavior
 

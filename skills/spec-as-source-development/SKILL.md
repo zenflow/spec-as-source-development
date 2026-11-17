@@ -9,7 +9,7 @@ description: >-
 
 # Spec-as-Source Development
 
-**A lightweight SDD framework for keeping human intent authoritative while making implementation regenerable.**
+**A lightweight spec-driven development framework for keeping human intent authoritative while making implementation regenerable.**
 
 Deliberate human decisions define what the software should do. The README and linked requirements preserve that intent; the agent derives technical sub-specifications, implementation, and verification from it. Discoveries feed back into explicit human decisions and revisions. Keep the specification concise, current, and sufficient to rebuild the required behavior without reverse-engineering the old implementation.
 
@@ -25,7 +25,7 @@ Use these document roles, respecting equivalent locations already designated by 
 | --- | --- |
 | `README.md` and explicitly linked requirements | Product purpose, observable behavior, desired qualities, and constraints. Human intent governs what is wanted. |
 | `ARCHITECTURE.md` | Consequential technical choices, interfaces, data models, implementation sub-specifications, and useful rationale. Design governs how requirements are realized and remains subordinate to them. |
-| `AGENTS.md` | How to work in the project: this convention, document locations, engineering practices, and development/check commands. |
+| `AGENTS.md` | How to work in the project: this workflow, document locations, engineering practices, and development/check commands. |
 
 Prefer an existing `DESIGN.md` over creating a competing architecture document. Extract requirements into a linked `REQUIREMENTS.md` or focused documents only when useful. Give each decision one authoritative home; link instead of duplicating it. Document roles matter more than filenames. Do not create empty documents to satisfy a template.
 
@@ -67,7 +67,7 @@ Reconcile the affected design, implementation, and tests with the updated requir
 
 ### Marking planned behavior
 
-For example:
+Any clear marker works, for example:
 
 - A `Planned features` section for deferred features.
 - A `[Planned]` prefix on a feature bullet.

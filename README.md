@@ -1,10 +1,10 @@
 # Spec-as-Source Development
 
-**A lightweight SDD framework for keeping human intent authoritative while making implementation regenerable.**
+**A lightweight spec-driven development framework for keeping human intent authoritative while making implementation regenerable.**
 
 As AI reduces implementation effort, specifying intent and validating results become increasingly important. Spec-driven development gives that work a durable foundation: an explicit description of what the software should do, against which any implementation can be judged.
 
-Spec-as-Source Development is describing and continuously refining software expectations at their source in the README and linked requirements, then letting those decisions propagate into design, implementation, and tests.
+Spec-as-Source Development is the practice of describing and continuously refining software expectations at their source in the README and linked requirements, then letting those decisions propagate into design, implementation, and tests.
 
 [**SKILL.md**](skills/spec-as-source-development/SKILL.md) is the authoritative definition of the methodology and the instructions agents follow. This README explains its purpose and how to use it.
 
@@ -27,9 +27,9 @@ You [author the requirements](skills/spec-as-source-development/SKILL.md#capture
 ## Bootstrap a project
 
 - Install this skill from your application project with the [Skills CLI](https://github.com/vercel-labs/skills/blob/main/docs/commands.md): `npx skills add zenflow/spec-as-source-development --skill spec-as-source-development`.
-- Add to `AGENTS.md`: `For development work in this project, read and follow the installed spec-as-source-development skill.` Or copy the [starter](examples/AGENTS.md).
+- Add to `AGENTS.md`, or your agent's equivalent instructions file such as `CLAUDE.md`: `For development work in this project, read and follow the installed spec-as-source-development skill.` Or copy the [starter](examples/AGENTS.md).
 - Optionally install companion skills, such as [Ponytail](https://github.com/DietrichGebert/ponytail/blob/main/INSTALL.md) for smaller implementations: `npx skills add DietrichGebert/ponytail --skill ponytail`.
-- Start from a clean working copy and write the README for the product you want. If it's too much to build well in one pass, mark the deferred parts as planned. This keeps the full vision visible while you implement and refine it in stages.
+- Start from a clean working copy in a Git repository and write the README for the product you want. If it's too much to build well in one pass, mark the deferred parts as planned. This keeps the full vision visible while you implement and refine it in stages.
 
 For example:
 

@@ -35,6 +35,8 @@ The human authors and deliberately revises the requirements. The agent may help 
 
 Before implementing a new or changed expectation, ensure its authoritative source records that human decision. Preserve the human's meaning and wording. Apply exact human-authored or already accepted edits directly; do not require repeated approval.
 
+When the human states a decision in conversation, the decision is accepted; record it faithfully in its authoritative source and implement it. Only the wording you drafted remains a proposal: report it so the human can review it when accepting the work. Expectations the agent identifies still require a human decision before implementation.
+
 Capture qualities and constraints as well as features. “Make it pretty” establishes a visual expectation; it does not authorize an invented design system or arbitrary metric. Use examples or a focused question when the distinction affects the result.
 
 Actively expose consequential omissions, ambiguities, contradictions, and conflicts between sources and implementation. Explain their effect, propose useful options, and obtain human judgment where needed. Keep proposals and unresolved questions visibly separate from accepted requirements. Continue independent work while a consequential decision is unresolved.
@@ -83,4 +85,4 @@ Distinguish withdrawal of a feature from removal of redundant wording; clarify c
 
 Preserve enough intent and consequential design to recreate required behavior. Any outcome that must survive regeneration belongs in those sources. Code and tests may be revised or regenerated as useful; this does not require wholesale rewrites or promise identical code. Verify each resulting implementation against the retained intent.
 
-Finish with a concise account of the intent changed, the result, verification, and unresolved decisions or incomplete work. Leave current documents sufficient for the next session to continue without relying on this chat. Keep documentation and verification proportional to the change.
+Finish with a concise account of the intent changed, including requirement wording you drafted, the result, verification, and unresolved decisions or incomplete work. Leave current documents sufficient for the next session to continue without relying on this chat. Keep documentation and verification proportional to the change.

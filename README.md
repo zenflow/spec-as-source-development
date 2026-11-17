@@ -22,7 +22,7 @@ The advantage is a specification small enough to understand, authoritative enoug
 
 You define the desired behavior and qualities in the README or linked requirements. The agent exposes consequential gaps, derives the necessary technical sub-specifications in `ARCHITECTURE.md`, and implements everything not qualified as planned. Expected test outcomes come from requirements; design and code supply the mechanics. Discoveries become explicit decisions, then updates to the affected documents, code, and tests.
 
-You [author the requirements](skills/spec-as-source-development/SKILL.md#capture-decisions-and-expose-gaps) and revise them deliberately. The agent can help explore possible edits; carefully review any wording it drafts before accepting it as your intent. Routine engineering remains autonomous. Consequential product choices come back to you. The resulting repository carries enough intent and design for another session to continue, revise, or rebuild the required behavior.
+You [author the requirements](skills/spec-as-source-development/SKILL.md#capture-decisions-and-expose-gaps) and revise them deliberately, preferably by editing them yourself. If you ask for a change in chat, the agent records it in the requirements, implements it, and reports the wording it drafted. Review that wording when you accept the work, because it becomes your stated intent. Routine engineering remains autonomous. Consequential product choices come back to you. The resulting repository carries enough intent and design for another session to continue, revise, or rebuild the required behavior.
 
 ## Bootstrap a project
 
@@ -56,7 +56,7 @@ Then iterate:
 
 1. **Generate:** “Implement the README.” The agent records the needed design, builds it, and verifies the behavior.
 2. **Refine:** Try it. Edit the README to clarify or change what you want, then ask the agent to update the implementation. Repeat until satisfied.
-3. **Accept and commit:** Review the result and verification, then commit the requirements, design, code, and tests together.
+3. **Accept and commit:** Review the result, the verification, and any requirement wording the agent drafted, then commit the requirements, design, code, and tests together.
 4. **Continue in a fresh chat:** Start from a clean working copy and edit the README for the next iteration. Remove planned qualifications for features you want to implement, then repeat.
 
 See the [implementation rule and ways to mark planned behavior](skills/spec-as-source-development/SKILL.md#implement-the-readme). Add usage instructions and project commands as they become real.

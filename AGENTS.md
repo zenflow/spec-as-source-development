@@ -15,3 +15,9 @@ SKILL.md defines the methodology. Read [README.md](README.md) for its purpose an
 - Keep `LICENSE` and `skills/spec-as-source-development/LICENSE.txt` identical.
 - Add supporting files only when they solve a concrete need.
 - Report what changed, what was verified, and anything incomplete or unverified.
+
+## Releasing
+
+- Versions are Git tags (X.Y.Z) with a GitHub release of the same tag; no version file exists.
+- Check gh release view <previous tag> and mirror its structure: title `Spec-as-Source Development vX.Y.Z`, summary, install command pinned with `@vX.Y.Z`, README link at the tag, MIT line.
+- Summarize changes since the last tag (`git log <tag>..HEAD`) in the notes; commit docs first, then tag the pushed `main` commit.

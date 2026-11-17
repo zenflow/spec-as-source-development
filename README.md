@@ -59,7 +59,7 @@ Then iterate:
 3. **Accept:** Review the result, the verification, and any requirement wording the agent drafted. Once you accept, the agent commits the requirements, design, code, and tests together.
 4. **Continue in a fresh chat:** Start from a clean working copy and edit the README for the next iteration. Remove planned qualifications for features you want to implement, then repeat.
 
-See the [implementation rule and ways to mark planned behavior](skills/spec-as-source-development/SKILL.md#implement-the-readme). Add usage instructions and project commands as they become real.
+See the [implementation rule and ways to mark planned behavior](skills/spec-as-source-development/SKILL.md#implement-the-readme). As usage becomes real, the agent documents it in the README for your review; once accepted, it binds later implementations like any other requirement.
 
 ### As you iterate
 

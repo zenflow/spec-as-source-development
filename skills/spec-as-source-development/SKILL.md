@@ -37,6 +37,8 @@ Before implementing a new or changed expectation, ensure its authoritative sourc
 
 When the human states a decision in conversation, the decision is accepted; record it faithfully in its authoritative source and implement it. Only the wording you drafted remains a proposal: report it so the human can review it when accepting the work. Expectations the agent identifies still require a human decision before implementation.
 
+Usage instructions in the README, such as installation, commands, and configuration, describe observable behavior and are requirements. When implementation introduces usage the requirements do not specify, decide it as routine engineering unless it is consequential, document it in the README, and report the wording as drafted.
+
 Capture qualities and constraints as well as features. “Make it pretty” establishes a visual expectation; it does not authorize an invented design system or arbitrary metric. Use examples or a focused question when the distinction affects the result.
 
 Actively expose consequential omissions, ambiguities, contradictions, and conflicts between sources and implementation. Explain their effect, propose useful options, and obtain human judgment where needed. Keep proposals and unresolved questions visibly separate from accepted requirements. Continue independent work while a consequential decision is unresolved.

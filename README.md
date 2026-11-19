@@ -20,9 +20,9 @@ The advantage is a specification small enough to understand, authoritative enoug
 
 ## How it works
 
-You define the desired behavior and qualities in the README or linked requirements. The agent exposes consequential gaps, derives the necessary technical sub-specifications in `ARCHITECTURE.md`, and implements everything not qualified as planned. Expected test outcomes come from requirements; design and code supply the mechanics. Discoveries become explicit decisions, then updates to the affected documents, code, and tests.
+You define the desired behavior, qualities, and constraints in the README or linked requirements. Implementation choices, including your own, go in `ARCHITECTURE.md`. The agent exposes consequential gaps, develops the necessary design, and implements everything not qualified as planned. Expected test outcomes come from requirements; design and code supply the mechanics. Discoveries become decisions and updates to the appropriate documents, code, and tests.
 
-You [author the requirements](skills/spec-as-source-development/SKILL.md#capture-decisions-and-expose-gaps) and revise them deliberately, preferably by editing them yourself. If you ask for a change in chat, the agent records it in the requirements, implements it, and reports the wording it drafted. Review that wording when you accept the work, because it becomes your stated intent. Routine engineering remains autonomous. Consequential product choices come back to you. The resulting repository carries enough intent and design for another session to continue, revise, or rebuild the required behavior.
+You [author the requirements](skills/spec-as-source-development/SKILL.md#capture-decisions-and-expose-gaps) and revise them deliberately, preferably by editing them yourself. If you ask for a change in chat, the agent records it in the appropriate source, implements it, and reports the wording it drafted. Review that wording when you accept the work, because it becomes your stated intent. The agent can [revise technical design](skills/spec-as-source-development/SKILL.md#derive-the-necessary-design), including choices you supplied, while preserving requirements. Consequential product choices come back to you. The [source rules](skills/spec-as-source-development/SKILL.md#establish-the-sources) distinguish ordinary implementation preferences from explicitly binding technical constraints.
 
 ## Bootstrap a project
 
@@ -38,7 +38,7 @@ For example:
 
 A small web app for keeping track of everyday tasks.
 
-Built with vanilla JavaScript and browser `localStorage`, so your list is saved between visits in the same browser. No account or backend required.
+Your list is saved between visits in the same browser. No account or server setup required.
 
 ## Features
 
@@ -52,12 +52,22 @@ Built with vanilla JavaScript and browser `localStorage`, so your list is saved 
 - Export your list as a JSON backup.
 ```
 
+If you have implementation ideas, write them in `ARCHITECTURE.md` or give them in chat for the agent to record before building. For Pocket Tasks, that might be:
+
+```markdown
+# Architecture
+
+Use vanilla JavaScript and browser `localStorage`. Run entirely in the browser without a backend.
+```
+
+These choices establish the starting design and can evolve under the [design rules](skills/spec-as-source-development/SKILL.md#derive-the-necessary-design). The requirement to retain tasks between visits still applies if the storage mechanism changes.
+
 Then iterate:
 
-1. **Generate:** “Implement the README.” The agent records the needed design, builds it, and verifies the behavior.
-2. **Refine:** Try it. Edit the README to clarify or change what you want, then ask the agent to update the implementation. Repeat until satisfied.
-3. **Accept:** Review the result, the verification, and any requirement wording the agent drafted. Once you accept, the agent commits the requirements, design, code, and tests together.
-4. **Continue in a fresh chat:** Start from a clean working copy and edit the README for the next iteration. Remove planned qualifications for features you want to implement, then repeat.
+1. **Generate:** “Implement the README.” The agent reads your requirements and any existing design, records the additional design needed, builds it, and verifies the behavior.
+2. **Refine:** Try it. Edit the README to change product expectations or `ARCHITECTURE.md` to change implementation direction, then ask the agent to update the implementation. You can also give either kind of change in chat. Repeat until satisfied.
+3. **Accept:** Review the result, the verification, any requirement wording the agent drafted, and consequential design changes and their reasons. Once you accept, the agent commits the requirements, design, code, and tests together.
+4. **Continue in a fresh chat:** Start from a clean working copy and edit the relevant source for the next iteration. Remove planned qualifications for features you want to implement, then repeat.
 
 See the [implementation rule and ways to mark planned behavior](skills/spec-as-source-development/SKILL.md#implement-the-readme). As usage becomes real, the agent documents it in the README for your review; once accepted, it binds later implementations like any other requirement.
 
@@ -65,7 +75,7 @@ See the [implementation rule and ways to mark planned behavior](skills/spec-as-s
 
 A new feature, a changed preference, or a reversed decision follows the same loop. A defect already covered by the requirements needs a fix and appropriate regression coverage; it does not need another specification. If you discover an expectation that was never recorded, capture it.
 
-The skill guides agent behavior; review and verification establish whether it followed through. Regenerable means the intended behavior and consequential design survive replacement of the implementation, not that every change requires starting over.
+The skill guides agent behavior; review and verification establish whether it followed through. Regenerable means the repository retains the intent and design context needed to rebuild required behavior. The design can evolve, and changes can be incremental.
 
 ## Planned features
 

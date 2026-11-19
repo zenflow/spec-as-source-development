@@ -21,7 +21,7 @@ The skill directory is self-contained. Following its workflow does not require r
 
 Keep the methodology in `SKILL.md`. The README summarizes it and links to the concrete rules, rather than maintaining another rulebook. Reconcile the introduction, adoption guidance, and examples whenever a deliberate methodology change affects them.
 
-Because a skill's text is its behavior, `SKILL.md` is both the implementation and the README's linked requirements. Changes to its rules are requirement changes, so report agent-drafted wording for review.
+The workflow rules in `SKILL.md` are this package's product behavior, so that file is both the implementation and the README's linked requirements. Changes to those rules are requirement changes; report agent-drafted wording for review. Package implementation choices belong in this architecture document.
 
 The README's [bootstrap instructions](README.md#bootstrap-a-project) use the Skills CLI to install the package and a single `AGENTS.md` instruction to adopt it. Project-specific commands and conventions belong in the adopting project's working instructions.
 
